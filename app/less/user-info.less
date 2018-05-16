@@ -1,0 +1,111 @@
+@import "smart-grid.less";
+@import "admixtures.less";
+
+.user-info-wrap {
+    display: flex;
+    .cc();
+    padding: 5px 0;
+    background: #ddd;
+}
+.user-info {
+    .content();
+    display: flex;
+    justify-content: space-between;
+}
+.user-info__statistics {
+    display: flex;
+    font-size: 17px;
+    color: #605e5e;
+    font-style: italic;
+}
+.user-info__dictionaries,
+.user-info__texts,
+.user-info__words {
+    padding: 0 10px 0 0;
+}
+.user-info__authentication {
+    display: flex;
+    font-size: 17px;
+    color: #605e5e;
+    font-style: italic;
+}
+.user-info-wrap-authentication {
+    display: flex;
+}
+.user-info__login,
+.user-info__password {
+    padding: 0 5px;
+}
+.user-info__login input,
+.user-info__password input {
+    width: 150px;
+    border: 1px solid #fff;
+    font-size: 17px;
+    padding: 0 5px;
+    height: 17px;
+    line-height: 17px;
+    background: transparent;
+    border-radius: 7px;
+}
+.user-info__login input:focus,
+.user-info__password input:focus {
+    border: 1px solid #008810;
+    background: transparent;
+    outline: none;
+}
+.user-info__go-account {
+    margin: 0 5px;
+    color: #006408;
+    font-weight: bold;
+    font-size: 17px;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    background: transparent;
+    padding: 0 5px;
+    &:active {
+        border: 0;
+        outline: 0;
+    }
+    &:hover {
+        cursor: pointer;
+        background: #fff;
+    }
+}
+.user-info__hallo-person {
+    display: flex;
+    font-size: 17px;
+}
+.user-info__hallo-person p {
+    padding: 0 5px;
+}
+.user-info__out-user {
+    display: inline-block;
+    padding: 0 10px;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    color: #006408;
+    &:hover {
+        background: #fff;
+    }
+}
+.user-info__user-setup {
+    display: block;
+    padding: 0 5px;
+    color: #006408;
+    margin: 0 5px;
+}
+.user-info__language {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 16px;
+    font-style: italic;
+    cursor: pointer;
+    padding: 0 10px;
+    span.flag {
+        margin-right: 5px;
+    }
+    &:hover {
+        background: #fff;
+    }
+}

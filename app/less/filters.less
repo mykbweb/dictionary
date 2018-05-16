@@ -1,0 +1,89 @@
+@import "smart-grid.less";
+@import "admixtures.less";
+.filters-wrap {
+    .cc();
+    padding: 5px 0;
+}
+.filters {
+    .content();
+    display: flex;
+    padding-top: 20px;
+    flex-wrap: wrap;
+    &__search-wrap {
+        flex-basis: 100%;
+        display: flex;
+        position: relative;
+    }
+    &__search-icon {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        z-index: 2;
+        left: 10px;
+        top: 0;
+        line-height: 30px;
+        font-size: 25px;
+        color: #aaa;
+    }
+    &__search {
+        display: block;
+        flex-basis: 100%;
+        height: 30px;
+        line-height: 30px;
+        font-size: 20px;
+        padding-left: 40px;
+        border: 1px solid #aaa;
+        &:focus {
+            outline: 0;
+        }
+    }
+    &__search-options {
+        flex-basis: 100%;
+        display: flex;
+        padding-top: 5px;
+        margin-right: auto;
+    }
+    &__settings-all {
+        font-size: 20px;
+        color: #0c6a00;
+        line-height: 30px;
+        display: block;
+        cursor: pointer;
+        margin-right: auto;
+    }
+    &__dictionary {
+        font-size: 20px;
+        color: #0c6a00;
+        line-height: 30px;
+        display: block;
+        cursor: pointer;
+        padding: 0 10px;
+    }
+    &__dictionary-select {
+        font-size: 17px;
+        line-height: 30px;
+        height: 30px;
+        padding: 0 35px 0 10px;
+        background: #b7ff97;
+        border-radius: 15px;
+        position: relative;
+    }
+    &__dictionary-select-close {
+        display: block;
+        position: absolute;
+        right: 5px;
+        top: 2px;
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        color: #000;
+        background: #e37676;
+        cursor: pointer;
+        font-size: 12px;
+        text-align: center;
+        border-radius: 100%;
+        &:hover {
+            background: #f00;
+        }
+    }
+}

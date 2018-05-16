@@ -1,0 +1,35 @@
+@import "smart-grid.less";
+@import "admixtures.less";
+.main-header-wrap {
+    .cc();
+    padding: 10px 0;
+    background: #484848;
+}
+.main-header {
+    .content();
+    display: flex;
+    &__navbar {
+
+        list-style: none;
+    }
+    &__navitem {
+        float: left;
+        a {
+            display: block;
+            padding: 5px 10px;
+            color: #000;
+            text-transform: uppercase;
+            font-size: 17px;
+            color: #fff;
+            border-left: 1px solid #aaa;
+            &:hover {
+                background: #000;
+            }
+        }
+    }
+    &__navitem:first-child {
+        a {
+            border-left: none;
+        }
+    }
+}

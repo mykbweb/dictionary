@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>test...</title>
+    <title>dictionary project...</title>
     <link rel="stylesheet" href="libs/font-awesome/web-fonts-with-css/css/fontawesome-all.css">
     <link rel="stylesheet" href="libs/flags/flags.min.css">
-    <link rel="stylesheet" href="libs/air-datepicker/dist/css/datepicker.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -32,7 +31,6 @@
            </ul>
        </div>
     </header>
-    <!-- /.main-header -->
     <div class="user-info-wrap">
         <div class="user-info">
             <div class="user-info__statistics">
@@ -66,80 +64,24 @@
         </div>
     </div>
     <!-- /.user-info -->
-    
-    <div class="dictionary-wrap">
-        <div class="dictionary">
-            <div class="dictionary__header">
-                <input placeholder="диапазон даты" type="text" class="datepicker-here" id="dictionary-date">
-                <div class="dictionary__checkbox-group">
-                   <div class="dictionary__checkbox-click"><i class="fa fa-check" aria-hidden="true"></i></div>
-                    <p class="dictionary__checkbox-text">выбор пунктов</p>
-                    <div class="dictionary__checkbox-click"><i class="fa fa-check" aria-hidden="true"></i></div>
-                    <p class="dictionary__checkbox-text">дата</p>
-                    <div class="dictionary__checkbox-click"><i class="fa fa-check" aria-hidden="true"></i></div>
-                    <p class="dictionary__checkbox-text">транскрипция</p>
-                </div>
+    <div class="filters-wrap">
+        <div class="filters">
+            <div class="filters__search-wrap">
+               <i class="fa fa-search filters__search-icon"></i>
+                <input type="text" name="search" class="filters__search">
             </div>
-            <div class="dictionary__words">
-               
-                <div class="dictionary__word">
-                    <div class="dictionary__checkbox">
-                        <div class="dictionary__checkbox-click"><i class="fa fa-check" aria-hidden="true"></i></div>
-                    </div>
-                    <div class="dictionary__word-1">apple</div>
-                    <div class="dictionary__transcription">[apple]</div>
-                    <div class="dictionary__volume"><i class="fa fa-volume-up" aria-hidden="true"></i></div>
-                    <div class="dictionary__word-2">яблоко</div>
-                    <div class="dictionary__date">7.12.2018</div>
-                    <div class="dictionary__status"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i></div>
-                </div>
-                
-               
+            <div class="filters__search-options">
+                <i class="fa fa-cogs filters__settings-all"></i>
+                <i class="fa fa-book filters__dictionary"></i>
+                <p class="filters__dictionary-select">first dictionary<i class="fa fa-times filters__dictionary-select-close"></i></p>
             </div>
         </div>
     </div>
-    <!-- /.dictionary -->
-    
-    <!-- popups code -->
-    <div class="popup-wrap" id="main-navbar">
-        <div class="popup">
-           <h3 class="popup__header"><i class="fa fa-bars"></i> Главная</h3>
-            <ul class="popup__items">
-                <li class="popup__item"><a href="#"><i class="fa fa-book"></i> словари</a></li>
-                <li class="popup__item"><a href="#"><i class="fa fa-file-alt"></i> тексты</a></li>
-                <li class="popup__item"><a href="#"><i class="fa fa-list-ol"></i> разбор текста</a></li>
-                <li class="popup__item"><a href="#"><i class="fa fa-chart-bar"></i> статистика</a></li>
-            </ul>
-            <div class="close close_top-left"><i class="fa fa-times" aria-hidden="true"></i></div>
+    <div class="table-wrap">
+        <div class="table">
+            
         </div>
     </div>
-    <!-- /.popup-wrap -->
-    <div class="popup-wrap" id="new-user">
-        <div class="popup">
-           <h3 class="popup__header"><i class="fa fa-user"></i> Регистрация</h3>
-            <form action="" class="new-user-form" methot="post">
-                <p class="new-user-form__text">Ваше имя:</p>
-                <input type="text" name="user-name">
-                <p class="new-user-form__text">Логин:</p>
-                <input type="text" name="user-login">
-                <p class="new-user-form__text">email:</p>
-                <input type="text" name="user-email">
-                <p class="new-user-form__text">пароль:</p>
-                <input type="password" name="user-password">
-                <p class="new-user-form__text">пароль еще раз:</p>
-                <input type="password" name="user-password2">
-                <br>
-                <input type="submit" value="Регистрация">
-            </form>
-            <div class="close close_top-left"><i class="fa fa-times" aria-hidden="true"></i></div>
-        </div>
-    </div>
-    <!-- /.popup-wrap -->
     <script src="libs/jquery/dist/jquery.min.js"></script>
-    <script src="libs/air-datepicker/dist/js/datepicker.js"></script>
-    <script src="libs/jquery-placeholder/jquery.placeholder.min.js"></script>
-    <script src="js/words.js"></script>
-    <script src="js/plagins.js"></script>
-    <script src="js/popup.js"></script>
 </body>
 </html>

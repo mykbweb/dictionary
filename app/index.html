@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test...</title>
+    <link rel="stylesheet" href="libs/font-awesome/web-fonts-with-css/css/fontawesome-all.css">
+    <link rel="stylesheet" href="libs/flags/flags.min.css">
+    <link rel="stylesheet" href="libs/air-datepicker/dist/css/datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header-wrap">
+       <div class="main-header">
+           <a href="/" class="logo logo_left"><img src="" width="100" height="30" border="1" alt="images">
+           </a>
+           <ul class="main-header__navbar">
+                <li class="main-header__navitem">
+                    <a href="#"><i class="fa fa-book"></i> словари</a>
+                </li>
+                <li class="main-header__navitem">
+                    <a href="#"><i class="fa fa-file-alt"></i> тексты</a>
+                </li>
+                <li class="main-header__navitem">
+                    <a href="#"><i class="fa fa-list-ol"></i> разбор текста</a>
+                </li>
+                <li class="main-header__navitem">
+                    <a href="#" class="navbars-btn"><i class="fa fa-chart-bar"></i> статистика</a>
+                </li>
+                <li class="main-header__navitem">
+                    <a href="#" class="bavbar-all-btn"><i class="fa fa-bars"></i> все меню</a>
+                </li>
+           </ul>
+       </div>
+    </header>
+    <!-- /.main-header -->
+    <div class="user-info-wrap">
+        <div class="user-info">
+            <div class="user-info__statistics">
+                <p class="user-info__dictionaries">словарей: <a href="#" class="dictionaries-link">2</a></p>
+                <p class="user-info__texts">текстов: <a href="#" class="texts-link">1</a></p>
+                <p class="user-info__words">слов: <a href="#" class="words-link">22</a></p>
+            </div>
+            <div class="user-info__authentication">
+               <form action="" class="user-info-wrap-authentication">
+                   <div class="user-info__login">
+                       логин:
+                       <input type="text" name="login">
+                   </div>
+                   <div class="user-info__password">
+                        пароль:
+                       <input type="password" name="password">
+                   </div>
+                   <input type="submit" value="войти" class="user-info__go-account">
+                   <a href="#" class="new-user-link">регистрация</a>
+               </form>
+<!--
+                <div class="user-info__hallo-person">
+                    <p>Иванов Иван Иванович</p>
+                    <a href="#" class="user-info__user-setup"><i class="fa fa-cogs" aria-hidden="true"></i></a>
+                    <a href="#" class="user-info__out-user">выйти из учетной записи</a>
+                </div>
+-->
+               
+                <div class="user-info__language"><span class="flag flag-ru" alt="Czech Republic"></span> ru</div>
+            </div>
+        </div>
+    </div>
+    <!-- /.user-info -->
+    
+    <div class="dictionary-wrap">
+        <div class="dictionary">
+            <div class="dictionary__header">
+                <input placeholder="диапазон даты" type="text" class="datepicker-here" id="dictionary-date">
+                <div class="dictionary__checkbox-group">
+                   <div class="dictionary__checkbox-click"><i class="fa fa-check" aria-hidden="true"></i></div>
+                    <p class="dictionary__checkbox-text">выбор пунктов</p>
+                    <div class="dictionary__checkbox-click"><i class="fa fa-check" aria-hidden="true"></i></div>
+                    <p class="dictionary__checkbox-text">дата</p>
+                    <div class="dictionary__checkbox-click"><i class="fa fa-check" aria-hidden="true"></i></div>
+                    <p class="dictionary__checkbox-text">транскрипция</p>
+                </div>
+            </div>
+            <div class="dictionary__words">
+               
+                <div class="dictionary__word">
+                    <div class="dictionary__checkbox">
+                        <div class="dictionary__checkbox-click"><i class="fa fa-check" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="dictionary__word-1">apple</div>
+                    <div class="dictionary__transcription">[apple]</div>
+                    <div class="dictionary__volume"><i class="fa fa-volume-up" aria-hidden="true"></i></div>
+                    <div class="dictionary__word-2">яблоко</div>
+                    <div class="dictionary__date">7.12.2018</div>
+                    <div class="dictionary__status"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i></div>
+                </div>
+                
+               
+            </div>
+        </div>
+    </div>
+    <!-- /.dictionary -->
+    
+    <!-- popups code -->
+    <div class="popup-wrap" id="main-navbar">
+        <div class="popup">
+           <h3 class="popup__header"><i class="fa fa-bars"></i> Главная</h3>
+            <ul class="popup__items">
+                <li class="popup__item"><a href="#"><i class="fa fa-book"></i> словари</a></li>
+                <li class="popup__item"><a href="#"><i class="fa fa-file-alt"></i> тексты</a></li>
+                <li class="popup__item"><a href="#"><i class="fa fa-list-ol"></i> разбор текста</a></li>
+                <li class="popup__item"><a href="#"><i class="fa fa-chart-bar"></i> статистика</a></li>
+            </ul>
+            <div class="close close_top-left"><i class="fa fa-times" aria-hidden="true"></i></div>
+        </div>
+    </div>
+    <!-- /.popup-wrap -->
+    <div class="popup-wrap" id="new-user">
+        <div class="popup">
+           <h3 class="popup__header"><i class="fa fa-user"></i> Регистрация</h3>
+            <form action="" class="new-user-form" methot="post">
+                <p class="new-user-form__text">Ваше имя:</p>
+                <input type="text" name="user-name">
+                <p class="new-user-form__text">Логин:</p>
+                <input type="text" name="user-login">
+                <p class="new-user-form__text">email:</p>
+                <input type="text" name="user-email">
+                <p class="new-user-form__text">пароль:</p>
+                <input type="password" name="user-password">
+                <p class="new-user-form__text">пароль еще раз:</p>
+                <input type="password" name="user-password2">
+                <br>
+                <input type="submit" value="Регистрация">
+            </form>
+            <div class="close close_top-left"><i class="fa fa-times" aria-hidden="true"></i></div>
+        </div>
+    </div>
+    <!-- /.popup-wrap -->
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/air-datepicker/dist/js/datepicker.js"></script>
+    <script src="libs/jquery-placeholder/jquery.placeholder.min.js"></script>
+    <script src="js/words.js"></script>
+    <script src="js/plagins.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+</html>

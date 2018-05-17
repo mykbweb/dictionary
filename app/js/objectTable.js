@@ -1,39 +1,39 @@
 // массив объектов словаря
-let table = [
-    {
-        id: 0,
-        word: 'apple',
-        translate: 'яблоко',
-        variants: 'dfhgsd, sdfhgsd, sdfh',
-        sound: false,
-        date: 2463242343,
-        testDate: 342623212,
-        dictionary: 'dictionary 1',
-        status: 0
-    },
-    {
-        id: 1,
-        word: 'work',
-        translate: 'работа',
-        variants: 'dfhgsd, sdfhgsd, sdfh',
-        sound: false,
-        date: 135147347,
-        testDate: 3457341236,
-        dictionary: 'dictionary 1',
-        status: 1
-    },
-    {
-        id: 2,
-        word: 'hope',
-        translate: 'надеяться',
-        variants: 'dfhgsd, sdfhgsd, sdfh',
-        sound: false,
-        date: 2472423562,
-        testDate: 987654,
-        dictionary: 'dictionary 1',
-        status: -2
-    }
-];
+//let table = [
+//    {
+//        id: 0,
+//        word: 'apple',
+//        translate: 'яблоко',
+//        variants: 'dfhgsd, sdfhgsd, sdfh',
+//        sound: false,
+//        date: 2463242343,
+//        testDate: 342623212,
+//        dictionary: 'dictionary 1',
+//        status: 0
+//    },
+//    {
+//        id: 1,
+//        word: 'work',
+//        translate: 'работа',
+//        variants: 'dfhgsd, sdfhgsd, sdfh',
+//        sound: false,
+//        date: 135147347,
+//        testDate: 3457341236,
+//        dictionary: 'dictionary 1',
+//        status: 1
+//    },
+//    {
+//        id: 2,
+//        word: 'hope',
+//        translate: 'надеяться',
+//        variants: 'dfhgsd, sdfhgsd, sdfh',
+//        sound: false,
+//        date: 2472423562,
+//        testDate: 987654,
+//        dictionary: 'dictionary 1',
+//        status: -2
+//    }
+//];
 // класс для работы с массивом словаря
  class Tb {
      constructor(serverTime) {
@@ -299,10 +299,10 @@ let table = [
 };
 
 
-let tb1 = new Tb(1525538732910);
-
-tb1.load(table);
-tb1.add('dgsdfg');
+//let tb1 = new Tb(1525538732910);
+//
+//tb1.load(table);
+//tb1.add('dgsdfg');
 
 //console.log(tb1.filter({status: [-1,10]}));
 

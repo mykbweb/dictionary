@@ -61,5 +61,8 @@ class RenderTables {
             them.el.append(wrap);
         }
     }
+    set(table){
+        this.table = table;
+    }
 }
 let elem = new RenderTables($('.table'), tb1.get());

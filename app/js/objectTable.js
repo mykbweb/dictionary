@@ -208,7 +208,41 @@
                  return 1;
              return 0;
          }
-         return newArr.sort(dateReverse);
+        switch(variant) {
+             case 'abc':
+            return newArr.sort(abc);
+             break;
+             case 'cba':
+             return newArr.sort(abc);
+             break;
+             case 'numberReverse':
+             return newArr.sort(numberReverse);
+             break;
+             case 'number':
+             return newArr.sort(number);
+             break;
+             case 'date':
+             return newArr.sort(date);
+             break;
+             case 'dateReverse':
+             return newArr.sort(dateReverse);
+             break;
+             case 'status':
+             return newArr.sort(status);
+             break;
+             case 'statusReverse':
+             return newArr.sort(statusReverse);
+             break;
+             case 'testDate':
+             return newArr.sort(testDate);
+             break;
+             case 'testDateReverse':
+             return newArr.sort(testDateReverse);
+             break;
+             default:
+            return newArr.sort(abc);
+             
+         }
      }
      
      filter(value) {

@@ -65,4 +65,4 @@ class RenderTables {
         this.table = table;
     }
 }
-let elem = new RenderTables($('.table'), tb1.get());
+//let elem = new RenderTables($('.table'), tb1.get());

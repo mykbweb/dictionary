@@ -176,7 +176,7 @@
             return newArr.sort(abc);
              break;
              case 'cba':
-             return newArr.sort(abc);
+             return newArr.sort(cba);
              break;
              case 'numberReverse':
              return newArr.sort(numberReverse);

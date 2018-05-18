@@ -63,11 +63,11 @@ tables[0] = {
 
 let tableFilters = {
     // содержит настройки фильтров для отрисовки таблиц
-    text: '',
+    text: 'j',
     date: undefined,
     testDate: undefined,
     status: undefined,
-    sort: undefined // содержит настройки сортировки, по умоляанию abc
+    sort: 'number' // содержит настройки сортировки, по умоляанию abc
     
 };
 // опускаем пока момент загрузки таблицы с сервера и продолжаем с ней работать
@@ -76,10 +76,7 @@ let tableFilters = {
 
 let uploadTable = 0; // получаем индекс массива языковой пары tables[uploadTable]
 
-//// создаем объект с экзымпляром классов Tb
-//let tbObject = {}; // будет содержать экземпляры класса Tb под разные словари
-
-let objTb;
+let objTb; // экземпляр класса для работы с базами словарей
 
 function rt() {
     // собираем все необходимые настройки и рисуем таблицу...
@@ -100,31 +97,32 @@ function rt() {
     if(!tableFilters.sort)
         arr = objTb.sort("abc");
     else
-        arr = objTb.sort("abc");
+        arr = objTb.sort(tableFilters.sort);
     // перезагружаем отсортированную таблицу
+//    console.log(tableFilters.sort);
+//    console.log(arr);
     objTb.load(arr);
+//    console.log(objTb);
+    goRender();
 }
+
+let renderTableObj; // содержит экземпляр класса для отрисовки таблицы
+
 function goRender() {
+    let render = [];
     // проверяем есть ли фильтры:
     if(!tableFilters.text && !tableFilters.date && !tableFilters.testDate && !tableFilters.status) {
         // если фильтров нет рисуем таблицу...
+        render = objTb.get();
     } else {
         // если есть фильтры применяем их и рисуем таблицу...
+        render = objTb.filter(tableFilters);
     }
+    objTb.load(render);
+    
+    renderTableObj = new RenderTables($('.table'), objTb.get());
+    
+    renderTableObj.render();
 }
-rt();
-//if(tables.length) {
-//    // если есть таблица языковой пары
-//    if(tables[0].tables !== undefined) {
-//        // если в какой то языковой паре есть хоть одна таблица
-//        // создаем объект с экземплярами класса Tb 
-//        
-//        for(let key in tables[uploadTable].tables) {
-//            tbObject[key] = new Tb(1525538732910); tbObject[key].load(tables[uploadTable].tables[key]); // цыфры это время на сервери в мс
-//        }
-//        
-//        
-//        
-//    }
-//        
-//}
+
+

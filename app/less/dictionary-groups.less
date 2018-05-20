@@ -1,0 +1,83 @@
+@import "smart-grid.less";
+@import "admixtures.less";
+.dictionary-groups {
+    &__header {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 30px;
+        padding: 0 7px;
+        background: #a8e8ad;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__language-select {
+        color: #aaa;
+        &.active {
+            color: #000;
+            cursor: pointer;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    &__name {
+        font-size: 17px;
+        line-height: 25px;
+        color: #000;
+        margin: 5px 10px;
+        border-bottom: 1px dotted #aaa;
+        font-style: italic;
+        display: flex;
+        flex-basis: 100%;
+    }
+    &__dictionary {
+        margin: 5px 10px;
+        font-size: 17px;
+        font-style: italic;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+    }
+    &__dictionary-select {
+        display: block;
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #aaa;
+        cursor: pointer;
+    }
+    &__dictionary-words {
+        color: #63ac4e;
+        font-style: italic;
+    }
+    &__actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+    }
+    &__actionjs {
+        font-size: 20px;
+        font-weight: bold;
+        background: transparent;
+        display: block;
+        line-height: 30px;
+        border: 1px solid #aaa;
+        cursor: pointer;
+        padding: 5px 10px;
+        text-transform: capitalize;
+        margin: 5px 10px;
+        &:hover {
+            background: #e6ffd3;
+        }
+        &_danger {
+            background: #fdc7c7;
+            &:hover {
+                background: #ff6060 !important;
+            }
+        }
+    }
+}

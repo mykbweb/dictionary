@@ -94,6 +94,30 @@
     
     <div class="popup-wrap">
         <div class="popup">
+           <i class="fa fa-times popup__close"></i>
+            <div class="dictionary-groups">
+                <div class="dictionary-groups__header">
+                    <i class="fa fa-caret-left dictionary-groups__language-select"></i>
+                    <p class="dictionary-groups__language">en - ru</p>
+                    <i class="fa fa-caret-right dictionary-groups__language-select"></i>
+                </div>
+                
+                <div class="dictionary-groups__content">
+                   
+                    <p class="dictionary-groups__name">Общая</p>
+                    <p class="dictionary-groups__dictionary">
+                        <span class="dictionary-groups__dictionary-select"></span>Словарь 1 <span class="dictionary-groups__dictionary-words">(128)</span>
+                    </p>
+                    
+                </div>
+                
+                <div class="dictionary-groups__actions">
+                    <buttom class="dictionary-groups__actionjs"><i class="fa fa-plus" aria-hidden="true"></i> добавить словари</buttom>
+                    <buttom class="dictionary-groups__actionjs"><i class="fa fa-compress" aria-hidden="true"></i> объеденить словари</buttom>
+                    <buttom class="dictionary-groups__actionjs"><i class="fa fa-arrow-right" aria-hidden="true"></i> переместить в другую группу</buttom>
+                    <buttom class="dictionary-groups__actionjs dictionary-groups__actionjs_danger"><i class="fa fa-trash" aria-hidden="true"></i> удалить словари</buttom>
+                </div>
+            </div>
         </div>
     </div>
     <script src="libs/jquery/dist/jquery.min.js"></script>

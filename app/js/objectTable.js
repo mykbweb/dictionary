@@ -39,7 +39,6 @@
                  count++;
                  if(count > length){
                      them.addStatus = false;
-//                     console.log('add status it is false');
                  }
              }());
              

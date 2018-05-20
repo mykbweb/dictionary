@@ -67,7 +67,9 @@ let tableFilters = {
     date: undefined,
     testDate: undefined,
     status: undefined,
-    sort: 'number' // содержит настройки сортировки, по умоляанию abc
+    sort: 'number', // содержит настройки сортировки, по умоляанию abc
+    number: 4, // колличество слов на страницы
+    str: 1 // какая страница
     
 };
 // опускаем пока момент загрузки таблицы с сервера и продолжаем с ней работать
@@ -125,4 +127,5 @@ function goRender() {
     renderTableObj.render();
 }
 
+// отрисовка таблицы rt();
 

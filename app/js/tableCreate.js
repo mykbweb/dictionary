@@ -10,7 +10,8 @@ class RenderTables {
         // создаем элименты таблицы
         let them = this;
         $(this.el).children().remove();
-        for(let i = 0; i < this.table.length; i++) {
+//        this.table.length
+        for(let i = (tableFilters.str - 1) * tableFilters.number; i < this.table.length; i++) {
             createElements(i);
         }
         

@@ -5,8 +5,9 @@ tables[0] = {
     translate: 'en - ru',
     tablesName: {
         // ключи видимости таблиц
-        'work': true,
-        'animal': true
+        'work': false,
+        'animal': true,
+        'tarvel': true
     },
     tables: {
         // содержит массив объектов словарей, с теми же именами, что и в tablesName
@@ -56,6 +57,52 @@ tables[0] = {
             testDate: undefined,
             dictionary: 'animal',
             status: 1
+        },
+        {
+            id: 2,
+            word: 'horse',
+            translate: 'лошадь',
+            variants: 'лошадь, конь, конница, кавалерия, козлы, рама',
+            sound: false,
+            date: 135147347,
+            testDate: undefined,
+            dictionary: 'animal',
+            status: 1
+        }
+    ],
+    tarvel: [
+        {
+            id: 0,
+            word: 'hotel',
+            translate: 'гостиница',
+            variants: 'отель, гостиница',
+            sound: false,
+            date: 2463242343,
+            testDate: undefined,
+            dictionary: 'tarvel',
+            status: 0
+        },
+        {
+            id: 1,
+            word: 'stop',
+            translate: 'остановка',
+            variants: 'остановка, конец, останов, упор, прекращение, ограничитель',
+            sound: false,
+            date: 135147347,
+            testDate: undefined,
+            dictionary: 'tarvel',
+            status: 1
+        },
+        {
+            id: 2,
+            word: 'boundary',
+            translate: 'граница',
+            variants: 'граница, черта, межа',
+            sound: false,
+            date: 135147347,
+            testDate: undefined,
+            dictionary: 'tarvel',
+            status: 1
         }
     ]
     }
@@ -63,14 +110,13 @@ tables[0] = {
 
 let tableFilters = {
     // содержит настройки фильтров для отрисовки таблиц
-    text: 'j',
+    text: '',
     date: undefined,
     testDate: undefined,
     status: undefined,
     sort: 'number', // содержит настройки сортировки, по умоляанию abc
-    number: 4, // колличество слов на страницы
+    number: 20, // колличество слов на страницы
     str: 1 // какая страница
-    
 };
 // опускаем пока момент загрузки таблицы с сервера и продолжаем с ней работать
 

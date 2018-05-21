@@ -3,18 +3,16 @@ class RenderTables {
     constructor(el, table) {
         this.el = el;
         this.table = table;
-        this.lines = 20;
-        this.page = 1;
     }
     render() {
         // создаем элименты таблицы
         let them = this;
         $(this.el).children().remove();
 //        this.table.length
-        for(let i = (tableFilters.str - 1) * tableFilters.number; i < this.table.length; i++) {
+        for(let i = (tableFilters.str - 1) * tableFilters.number; i < this.table.length && i < tableFilters.str * tableFilters.number; i++) {
             createElements(i);
         }
-        
+//        console.log((tableFilters.str - 1) * tableFilters.number);
         function createElements(n) {
             
             let dateWordObject = new Date(them.table[n].date);

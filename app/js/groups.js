@@ -121,5 +121,6 @@ $(function() {
     $('#dictionary-groups .popup__close').click(function() {
         // отрисовка таблицы при загрытии попапа с группами
         rt();
+        rlt();
     });
 })

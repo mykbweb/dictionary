@@ -40,6 +40,8 @@
     &__search-options {
         flex-basis: 100%;
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         padding-top: 5px;
         margin-right: auto;
     }
@@ -51,13 +53,22 @@
         cursor: pointer;
         margin-right: auto;
     }
-    &__dictionary {
+    &__dictionary, &__dictionary-list {
         font-size: 20px;
         color: #0c6a00;
         line-height: 30px;
         display: block;
         cursor: pointer;
         padding: 0 10px;
+    }
+    &__list-select {
+        flex-basis: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px 0;
+        border-bottom: 1px solid #aaa;
     }
     &__dictionary-select {
         font-size: 17px;
@@ -67,6 +78,7 @@
         background: #b7ff97;
         border-radius: 15px;
         position: relative;
+        flex-grow: 0;
     }
     &__dictionary-select-close {
         display: block;

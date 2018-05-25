@@ -72,12 +72,23 @@
                 <input type="text" name="search" class="filters__search">
             </div>
             <div class="filters__search-options">
-                <i class="fa fa-cogs filters__settings-all"></i>
-                <i class="fa fa-book filters__dictionary"></i>
-                <i class="fa fa-table filters__dictionary-list"></i>
+                <p class="filters__search-options-item filters__search-options-item_left">
+                    <i class="fa fa-cogs filters__settings-all"></i>
+                    настройки
+                    <i class="fa fa-caret-up filters__search-options_caret" aria-hidden="true"></i>
+                </p>
+                <p class="filters__search-options-item filters__search-options-dictionary-js">
+                    <i class="fa fa-book filters__dictionary"></i>
+                    все словари
+                </p>
+                <p class="filters__search-options-item filters__search-options-dictionary-list-js">
+                    <i class="fa fa-table filters__dictionary-list"></i>
+                    выбранные словари (<span class="filters__dictionary-list-size">1</span>)
+                    <i class="fa fa-caret-down filters__search-options_caret" aria-hidden="true"></i>
+                </p>
+                
                 <div class="filters__list-select">
-                    <p class="filters__dictionary-select">first dictionary<i class="fa fa-times filters__dictionary-select-close"></i></p>
-                    <p class="filters__dictionary-select">first dictionary<i class="fa fa-times filters__dictionary-select-close"></i></p>
+<!--                    генерируется js-->
                 </div>
             </div>
         </div>
@@ -85,7 +96,7 @@
     
     <div class="table-wrap">
         <div class="table">
-            
+<!--            генерируется js-->
         </div>
     </div>
     
@@ -108,14 +119,7 @@
                 </div>
                 
                 <div class="dictionary-groups__content">
-                   
-<!--
-                    <p class="dictionary-groups__name">Общая</p>
-                    <p class="dictionary-groups__dictionary">
-                        <span class="dictionary-groups__dictionary-select"></span>Словарь 1 <span class="dictionary-groups__dictionary-words">(128)</span>
-                    </p>
--->
-                    
+<!--                    генерируется js-->
                 </div>
                 
                 <div class="dictionary-groups__actions">

@@ -110,7 +110,7 @@ function rg() {
 
 // события на страницы
 $(function() {
-    $(".filters__dictionary").click(function() {
+    $(".filters__search-options-dictionary-js").click(function() {
         // отрисовка групп
         rg();
         $("#dictionary-groups").toggleClass('popup-show');

@@ -1,6 +1,6 @@
 'use strict'
 let groups = {
-    'animal' : ['animal']
+    'животные' : ['animal']
 };
 
 function rg() {
@@ -31,7 +31,7 @@ function rg() {
     // теперь в mainGroupTable содержатся все словари без принадлежности к группам
     // создаем переменные объектов для отрисовки таблицы
     
-    let mainGroupsTables = $('<p class="dictionary-groups__name">Общая</p>'); // заголовок общей группы
+    let mainGroupsTables = $('<p class="dictionary-groups__name dictionary-groups__main-js">Общая<span class="dictionary-groups__selected-all"> <span class="dictionary-groups__dictionary-select"><i class="fa fa-check dictionary-groups__dictionary-select-icon"></i><i class="fa fa-circle dictionary-groups__dictionary-select-icon" aria-hidden="true"></i></span> выделить всё</span></p>'); // заголовок общей группы
     
     
     // проверяем есть ли записи в общей таблицы, и если есть рисуем группы
@@ -40,6 +40,7 @@ function rg() {
     if(mainGroupTable.length) {
        // рисуем заголовок
         targetWrap.append(mainGroupsTables);
+        let allElementsGroupTable = $('<div class="dictionary-groups__dictionary-wrap"></div>');
         for(let i = mainGroupTable.length; i--;) {
             
             let selected = $('<span class="dictionary-groups__dictionary-select"><i class="fa fa-check dictionary-groups__dictionary-select-icon"></i></span>');
@@ -55,6 +56,7 @@ function rg() {
                     $(this).addClass('checked');
                     tables[uploadTable].tablesName[mainGroupTable[i]] = true;
                 }
+                checkedGroup();
             });
             
             let tableNameWrap = $('<p class="dictionary-groups__dictionary"></p>');
@@ -66,16 +68,46 @@ function rg() {
                 $('<span class="dictionary-groups__dictionary-words"> ('+tables[uploadTable].tables[mainGroupTable[i]].length+')</span>')
             );
             
-            targetWrap.append(tableName);
+            allElementsGroupTable.append(tableName);
         }
+        targetWrap.append(allElementsGroupTable);
+        // добовляем события на кнопку выделить все
+        $('.dictionary-groups__main-js .dictionary-groups__dictionary-select').click(function() {
+            let s;
+            
+            if($(this).hasClass('checked')) {
+               s = false;
+                $(this).removeClass('checked');
+                
+                $(this).parents('.dictionary-groups__name').next().find('.dictionary-groups__dictionary-select').removeClass('checked');
+                
+            } else {
+                s = true;
+                $(this).addClass('checked');
+                
+                $(this).parents('.dictionary-groups__name').next().find('.dictionary-groups__dictionary-select').addClass('checked');
+                
+            }
+            
+            for(let i = mainGroupTable.length; i--;) {
+                tables[uploadTable].tablesName[mainGroupTable[i]] = s;
+            }
+            checkedGroup();
+        });
+        
+        checkedGroup();
+        
     }
     // рисуем созданные группы
     for(let k in groups) {
-         let groupsNameElement = $('<p class="dictionary-groups__name">'+k+'</p>');
+        
+        let groupsNameElement = $('<p class="dictionary-groups__name dictionary-groups__main-js">'+k+'<span class="dictionary-groups__selected-all"> <span class="dictionary-groups__dictionary-select"><i class="fa fa-check dictionary-groups__dictionary-select-icon"></i><i class="fa fa-circle dictionary-groups__dictionary-select-icon" aria-hidden="true"></i></span> выделить всё</span></p>'); // заголовок созданных груп
+        
+        let allElementsGroupTable = $('<div class="dictionary-groups__dictionary-wrap"></div>');
+        
         // рисуем заголовок группы
         targetWrap.append(groupsNameElement);
         for(let i = groups[k].length; i--;) {
-
             let selected = $('<span class="dictionary-groups__dictionary-select"><i class="fa fa-check dictionary-groups__dictionary-select-icon"></i></span>');
             
             if(tables[uploadTable].tablesName[groups[k][i]]) {
@@ -90,6 +122,7 @@ function rg() {
                     $(this).addClass('checked');
                     tables[uploadTable].tablesName[groups[k][i]] = true;
                 }
+                checkedGroup();
             });
             
             let tableNameWrap = $('<p class="dictionary-groups__dictionary"></p>');
@@ -101,10 +134,54 @@ function rg() {
                 $('<span class="dictionary-groups__dictionary-words"> ('+tables[uploadTable].tables[groups[k][i]].length+')</span>')
             );
             
-            targetWrap.append(tableName);
             
+            allElementsGroupTable.append(tableName);
         }
+        targetWrap.append(allElementsGroupTable);
+        
+        groupsNameElement.find('.dictionary-groups__dictionary-select').click(function() {
+            let s;
+            
+            if($(this).hasClass('checked')) {
+               s = false;
+                $(this).removeClass('checked');
+                
+                $(this).parents('.dictionary-groups__name').next().find('.dictionary-groups__dictionary-select').removeClass('checked');
+                
+            } else {
+                s = true;
+                $(this).addClass('checked');
+                
+                $(this).parents('.dictionary-groups__name').next().find('.dictionary-groups__dictionary-select').addClass('checked');
+                
+            }
+            
+            for(let i = groups[k].length; i--;) {
+                tables[uploadTable].tablesName[groups[k][i]] = s;
+            }
+            checkedGroup();
+        });
+        checkedGroup();
     }
+    
+    function checkedGroup() {
+        // ставит галочки в заголовки групп меню если все пункты меню выделены
+           // находим все блоки с таблицами в группах
+           $('.dictionary-groups__dictionary-wrap').each(function() {
+               if($(this).find('.dictionary-groups__dictionary-select').length == $(this).find('.checked').length) {
+                   $(this).prev().find('.dictionary-groups__dictionary-select').addClass('checked')
+                   .removeClass('some-checked');
+               } else if($(this).find('.checked').length) {
+                   $(this).prev().find('.dictionary-groups__dictionary-select').removeClass('checked')
+                   .addClass('some-checked');
+               } else {
+                   $(this).prev().find('.dictionary-groups__dictionary-select').removeClass('checked')
+                   .removeClass('some-checked');
+               }
+           });
+    }
+
+    
 }
 
 
@@ -123,4 +200,4 @@ $(function() {
         rt();
         rlt();
     });
-})
+});

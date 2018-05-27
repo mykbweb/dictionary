@@ -173,5 +173,14 @@ function goRender() {
     renderTableObj.render();
 }
 
-// отрисовка таблицы rt();
-
+// пишем колличество таблиц всего
+function tableSize() {
+    let count = 0;
+    
+    for(let k in tables[uploadTable].tables) {
+        count++;
+    }
+    $('.filters__dictionary-list-size-all')
+        .text(count);
+}
+tableSize();

@@ -23,6 +23,11 @@
         flex-wrap: wrap;
         justify-content: space-around;
     }
+    &__dictionary-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
     &__name {
         font-size: 17px;
         line-height: 25px;
@@ -32,6 +37,11 @@
         font-style: italic;
         display: flex;
         flex-basis: 100%;
+    }
+    &__selected-all {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
     }
     &__dictionary {
         margin: 5px 10px;
@@ -48,8 +58,15 @@
         height: 20px;
         border: 1px solid #aaa;
         cursor: pointer;
+        overflow: hidden;
     }
     &__dictionary-select.checked &__dictionary-select-icon {
+        display: block;
+    }
+    &__dictionary-select .fa-circle {
+        font-size: 10px;
+    }
+    &__dictionary-select.some-checked .fa-circle {
         display: block;
     }
     &__dictionary-select-icon {

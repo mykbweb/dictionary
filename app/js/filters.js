@@ -24,6 +24,12 @@ function rlt() {
     }
     // записываем колличество выбранных страниц в кнопку
     $('.filters__dictionary-list-size').text(count);
+    
+    let btnAdd = $('<div class="filters__dictionary-select-all"><i class="fa fa-plus" aria-hidden="true"></i> выбрать</div>');
+    
+    btnAdd.click(() => $(".filters__search-options-dictionary-js").trigger('click'));
+
+    $('.filters__list-select').append(btnAdd);
 }
 
 

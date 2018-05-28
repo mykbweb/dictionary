@@ -31,7 +31,7 @@ function rg() {
     // теперь в mainGroupTable содержатся все словари без принадлежности к группам
     // создаем переменные объектов для отрисовки таблицы
     
-    let mainGroupsTables = $('<p class="dictionary-groups__name dictionary-groups__main-js">Общая<span class="dictionary-groups__selected-all"> <span class="dictionary-groups__dictionary-select"><i class="fa fa-check dictionary-groups__dictionary-select-icon"></i><i class="fa fa-circle dictionary-groups__dictionary-select-icon" aria-hidden="true"></i></span> выделить всё</span></p>'); // заголовок общей группы
+    let mainGroupsTables = $('<p class="dictionary-groups__name dictionary-groups__main-js"><span class="dictionary-groups__toggle">Общая (словари: <span class="dictionary-groups__tables-length">0</span>, слов: <span class="dictionary-groups__words-length">0</span>)</span> <i class="fa dictionary-groups__caret fa-caret-up" aria-hidden="true"></i><span class="dictionary-groups__selected-all"> <span class="dictionary-groups__dictionary-select"><i class="fa fa-check dictionary-groups__dictionary-select-icon"></i><i class="fa fa-circle dictionary-groups__dictionary-select-icon" aria-hidden="true"></i></span> выделить всё</span></p>'); // заголовок общей группы
     
     
     // проверяем есть ли записи в общей таблицы, и если есть рисуем группы
@@ -95,13 +95,26 @@ function rg() {
             checkedGroup();
         });
         
+        // записываем колличество таблиц и слов в группу
+        
+        $('.dictionary-groups__tables-length').text(mainGroupTable.length);
+        $('.dictionary-groups__words-length').text(
+            () => {
+                let num = 0;
+                for(let i = mainGroupTable.length; i--;) {
+                    num += tables[uploadTable].tables[mainGroupTable[i]].length
+                }
+                return num;
+            }
+        );
+        
         checkedGroup();
         
     }
     // рисуем созданные группы
     for(let k in groups) {
         
-        let groupsNameElement = $('<p class="dictionary-groups__name dictionary-groups__main-js">'+k+'<span class="dictionary-groups__selected-all"> <span class="dictionary-groups__dictionary-select"><i class="fa fa-check dictionary-groups__dictionary-select-icon"></i><i class="fa fa-circle dictionary-groups__dictionary-select-icon" aria-hidden="true"></i></span> выделить всё</span></p>'); // заголовок созданных груп
+        let groupsNameElement = $('<p class="dictionary-groups__name dictionary-groups__main-js"><span class="dictionary-groups__toggle">'+k+' (словари: <span class="dictionary-groups__tables-length">0</span>, слов: <span class="dictionary-groups__words-length">0</span>)</span> <i class="fa dictionary-groups__caret fa-caret-up" aria-hidden="true"></i><span class="dictionary-groups__selected-all"> <span class="dictionary-groups__dictionary-select"><i class="fa fa-check dictionary-groups__dictionary-select-icon"></i><i class="fa fa-circle dictionary-groups__dictionary-select-icon" aria-hidden="true"></i></span> выделить всё</span></p>'); // заголовок созданных груп
         
         let allElementsGroupTable = $('<div class="dictionary-groups__dictionary-wrap"></div>');
         
@@ -161,8 +174,38 @@ function rg() {
             }
             checkedGroup();
         });
+        
+        // пишем колличество таблиц и слов в заголовке группы
+        groupsNameElement.find('.dictionary-groups__tables-length').text(groups[k].length);
+        groupsNameElement.find('.dictionary-groups__words-length').text(
+            () => {
+                let num = 0;
+                for(let i = groups[k].length; i--;) {
+                    num += tables[uploadTable].tables[groups[k][i]].length;
+                }
+                return num;
+            }
+        );
+        
         checkedGroup();
     }
+    
+    
+    // цепляем события развернуть / свернуть группу
+    
+    $('.dictionary-groups__toggle').click(function() {
+        let content = $(this).parents('.dictionary-groups__name').next();
+        let caret = $(this).parents('.dictionary-groups__name').find('.dictionary-groups__caret');
+        
+            content.toggle(200, () => {
+                if(caret.hasClass('fa-caret-up')) { 
+                    caret.removeClass('fa-caret-up').addClass('fa-caret-down');
+                } else {
+                    caret.removeClass('fa-caret-down').addClass('fa-caret-up');
+                }
+            });
+
+    });
     
     function checkedGroup() {
         // ставит галочки в заголовки групп меню если все пункты меню выделены

@@ -18,7 +18,7 @@ tables[0] = {
             translate: 'работа',
             variants: 'работа, задание, труд, место работы, занятие, служба',
             sound: false,
-            date: 2463242343,
+            date: 1527800400000,
             testDate: undefined,
             dictionary: 'work',
             status: 0
@@ -29,7 +29,7 @@ tables[0] = {
             translate: 'работа',
             variants: 'работа, труд, произведение, дело, дела, сочинение',
             sound: false,
-            date: 135147347,
+            date: 1527800400000,
             testDate: undefined,
             dictionary: 'work',
             status: 1
@@ -42,7 +42,7 @@ tables[0] = {
             translate: 'собака',
             variants: '',
             sound: false,
-            date: 2463242343,
+            date: 1531342800000,
             testDate: undefined,
             dictionary: 'animal',
             status: 0
@@ -53,7 +53,7 @@ tables[0] = {
             translate: 'крокодил',
             variants: 'крокодил, гулянье парами',
             sound: false,
-            date: 135147347,
+            date: 1527800400000,
             testDate: undefined,
             dictionary: 'animal',
             status: 1
@@ -64,7 +64,7 @@ tables[0] = {
             translate: 'лошадь',
             variants: 'лошадь, конь, конница, кавалерия, козлы, рама',
             sound: false,
-            date: 135147347,
+            date: 1531342800000,
             testDate: undefined,
             dictionary: 'animal',
             status: 1
@@ -77,7 +77,7 @@ tables[0] = {
             translate: 'гостиница',
             variants: 'отель, гостиница',
             sound: false,
-            date: 2463242343,
+            date: 1531342800000,
             testDate: undefined,
             dictionary: 'tarvel',
             status: 0
@@ -88,7 +88,7 @@ tables[0] = {
             translate: 'остановка',
             variants: 'остановка, конец, останов, упор, прекращение, ограничитель',
             sound: false,
-            date: 135147347,
+            date: 1531342800000,
             testDate: undefined,
             dictionary: 'tarvel',
             status: 1
@@ -99,7 +99,7 @@ tables[0] = {
             translate: 'граница',
             variants: 'граница, черта, межа',
             sound: false,
-            date: 135147347,
+            date: 1527800400000,
             testDate: undefined,
             dictionary: 'tarvel',
             status: 1
@@ -107,7 +107,6 @@ tables[0] = {
     ]
     }
 };
-
 let tableFilters = {
     // содержит настройки фильтров для отрисовки таблиц
     text: '',

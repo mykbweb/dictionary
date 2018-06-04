@@ -6,6 +6,9 @@
     <title>dictionary project...</title>
     <link rel="stylesheet" href="libs/font-awesome/web-fonts-with-css/css/fontawesome-all.css">
     <link rel="stylesheet" href="libs/flags/flags.min.css">
+    
+    <link rel="stylesheet" href="libs/datetimepicker-master/jquery.datetimepicker.css">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -75,7 +78,7 @@
                 <p class="filters__search-options-item filters__search-options-item_left filters__setting-btn">
                     <i class="fa fa-cogs filters__settings-all"></i>
                     настройки
-                    <i class="fa fa-caret-up filters__search-options_caret" aria-hidden="true"></i>
+                    <i class="fa fa-caret-down filters__search-options_caret" aria-hidden="true"></i>
                 </p>
                 <p class="filters__search-options-item filters__search-options-dictionary-js">
                     <i class="fa fa-book filters__dictionary"></i>
@@ -87,28 +90,77 @@
                     <i class="fa fa-caret-down filters__search-options_caret" aria-hidden="true"></i>
                 </p>
                 
-                <div class="filters__options">
+                <div class="filters__options" style="display: none;">
                     <div class="filters__options-header">
                        
-                        <div class="filters__options-header-btn active">
+                        <div class="filters__options-header-btn active" data-for="#filters__col">
                             <i class="fa fa-columns" aria-hidden="true"></i>
                             <span class="filters__options-header-btn-text">колонки</span>
                         </div>
                         
-                        <div class="filters__options-header-btn">
+                        <div class="filters__options-header-btn" data-for="#filters__filters">
                             <i class="fa fa-filter" aria-hidden="true"></i>
                             <span class="filters__options-header-btn-text">фильтры</span>
                         </div>
                         
-                        <div class="filters__options-header-btn">
+                        <div class="filters__options-header-btn" data-for="#filters__str">
                             <i class="fa fa-list" aria-hidden="true"></i>
                             <span class="filters__options-header-btn-text">страницы</span>
                         </div>
                         
                     </div>
                     
-                    <div class="filters__options-btns">
-                        vfdbgdfhg
+                    <div class="filters__options-btns active" id="filters__col">
+                        <div class="filters__options-btn-block">
+                            <div class="filters__options-checkbox filters__options-date-col active">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            дата добавления
+                        </div>
+                        <div class="filters__options-btn-block">
+                            <div class="filters__options-checkbox filters__options-datetest-col active">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            дата прохождения теста
+                        </div>
+                        <div class="filters__options-btn-block">
+                            <div class="filters__options-checkbox filters__options-status-col active">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            статус
+                        </div>
+                        <div class="filters__options-btn-block">
+                            <div class="filters__options-checkbox filters__options-tablename-col active">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            словарь
+                        </div>
+                        <div class="filters__options-btn-block">
+                            <div class="filters__options-checkbox filters__options-wordselect-col active">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            выбор слов
+                        </div>
+                        <div class="filters__options-btn-block">
+                            <div class="filters__options-checkbox filters__options-tableheader active">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            заголовок таблицы
+                        </div>
+                    </div>
+                    <div class="filters__options-btns" id="filters__filters">
+                       
+                       <div class="filters__date-select-block">
+                           <p class="filters__date-select-header">Выберети диатазон дат:</p>
+                           <p class="filters__date-select-text">от:</p>
+                           <input type="text" class="filters__date-min" id="filters__date-min">
+                           <p class="filters__date-select-text">до:</p>
+                           <input type="text" class="filters__date-max" id="filters__date-max">
+                       </div>
+    
+                    </div>
+                    <div class="filters__options-btns" id="filters__str">
+                        3
                     </div>
                     
                     
@@ -159,6 +211,9 @@
         </div>
     </div>
     <script src="libs/jquery/dist/jquery.min.js"></script>
+    
+    <script src="libs/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
+    
     <script src="js/objectTable.js"></script>
     <script src="js/tableCreate.js"></script>
     <script src="js/tables.js"></script>

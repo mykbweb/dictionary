@@ -5,14 +5,22 @@ class RenderTables {
         this.table = table;
     }
     render() {
+        // рисуем шапку таблицы
+        let tableHeader = $('<div class="words words_header"></div>');
+        
+        tableHeader.html('<div class="words__select"></div><div class="words__word">слово</div><div class="words__translate">перевод</div><div class="words__date">дата записи</div><div class="words__testDate">дата теста</div><div class="words__status">статус</div><div class="words__dictionary">словари</div>');
+        
         // создаем элименты таблицы
         let them = this;
         $(this.el).children().remove();
-//        this.table.length
         for(let i = (tableFilters.str - 1) * tableFilters.number; i < this.table.length && i < tableFilters.str * tableFilters.number; i++) {
             createElements(i);
         }
-//        console.log((tableFilters.str - 1) * tableFilters.number);
+        
+        $(this.el).prepend(tableHeader);
+        
+        
+        tableColWisible();
         function createElements(n) {
             
             let dateWordObject = new Date(them.table[n].date);

@@ -26,14 +26,14 @@ class RenderTables {
             let dateWordObject = new Date(them.table[n].date);
             let dateWord;
             if (them.table[n].date)
-                dateWord = `${dateWordObject.getDay()}.${dateWordObject.getMonth()}.${dateWordObject.getFullYear()} ${dateWordObject.getHours()}:${dateWordObject.getMinutes()}`;
+                dateWord = `${dateWordObject.getFullYear()}/${dateWordObject.getMonth() +1}/${dateWordObject.getDate()}`;
             else
                 dateWord = '---------';
             
             let dateTestObject = new Date(them.table[n].testDate);
             let dateTest;
             if (them.table[n].testDate)
-                dateTest = `${dateTestObject.getDay()}.${dateTestObject.getMonth()}.${dateTestObject.getFullYear()} ${dateTestObject.getHours()}:${dateTestObject.getMinutes()}`;
+                dateTest = `${dateTestObject.getFullYear()}/${dateTestObject.getMonth() +1}/${dateTestObject.getDate()}`;
             else
                 dateTest = '---------';
             // пишем элименты

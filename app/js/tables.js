@@ -5,7 +5,7 @@ tables[0] = {
     translate: 'en - ru',
     tablesName: {
         // ключи видимости таблиц
-        'work': false,
+        'work': true,
         'animal': true,
         'tarvel': true
     },
@@ -42,7 +42,7 @@ tables[0] = {
             translate: 'собака',
             variants: '',
             sound: false,
-            date: 1531342800000,
+            date: 1527800400000,
             testDate: undefined,
             dictionary: 'animal',
             status: 0
@@ -53,7 +53,7 @@ tables[0] = {
             translate: 'крокодил',
             variants: 'крокодил, гулянье парами',
             sound: false,
-            date: 1527800400000,
+            date: 1531342800000,
             testDate: undefined,
             dictionary: 'animal',
             status: 1
@@ -77,7 +77,7 @@ tables[0] = {
             translate: 'гостиница',
             variants: 'отель, гостиница',
             sound: false,
-            date: 1531342800000,
+            date: 1527800400000,
             testDate: undefined,
             dictionary: 'tarvel',
             status: 0
@@ -99,7 +99,7 @@ tables[0] = {
             translate: 'граница',
             variants: 'граница, черта, межа',
             sound: false,
-            date: 1527800400000,
+            date: 1531342800000,
             testDate: undefined,
             dictionary: 'tarvel',
             status: 1
@@ -138,7 +138,7 @@ function rt() {
     }
     // теперь все необходимые таблицы в arr массиве
     // создаем экземпляр класса для работы с массивом словаря, это глобальный объект
-    objTb = new Tb(3251461);
+    objTb = new Tb(1528141168482);
     objTb.load(arr); // добавляем словари
     // сортируем массив если сортировка не указана, тогда по умолчанию
     if(!tableFilters.sort)

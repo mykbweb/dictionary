@@ -43,10 +43,12 @@ $(function() {
         },
   onShow:function( ct ){
    this.setOptions({
-    maxDate:jQuery('#filters__date-max').val()?jQuery('#filters__date-max').val():false
+    maxDate:jQuery('#filters__date-max').val()?jQuery('#filters__date-max').val() : minMaxDateWord('max'),
+    minDate:minMaxDateWord('min')
    })
   },
-  timepicker:false
+  timepicker:false,
+  startDate: minMaxDateWord('min')
  });
  $('#filters__date-max').datetimepicker({
   format:'Y/m/d',
@@ -55,10 +57,12 @@ $(function() {
         },
   onShow:function( ct ){
    this.setOptions({
-    minDate:jQuery('#filters__date-min').val()?jQuery('#filters__date-min').val():false
+    minDate:jQuery('#filters__date-min').val()?jQuery('#filters__date-min').val() : minMaxDateWord('min'),
+    maxDate: minMaxDateWord('max')
    })
   },
-  timepicker:false
+  timepicker:false,
+  startDate: minMaxDateWord('max')
  });
     
     $('#filters__date-min, #filters__date-max').change(function() {
@@ -73,8 +77,17 @@ $(function() {
         // проверка необходимости перезаписи фильтров и отрисовке табл
         if(r.test($('#filters__date-min').val()) && r.test($('#filters__date-max').val())) {
             
-            let date1 = new Date(...$('#filters__date-min').val().split('/'));
-            let date2 = new Date(...$('#filters__date-max').val().split('/'));
+            
+            
+            let d1 = $('#filters__date-min').val().split('/');
+            d1[1];
+            
+            let d2 = $('#filters__date-max').val().split('/');
+            d2[1];
+            
+            
+            let date1 = new Date(d1);
+            let date2 = new Date(d2);
             
             date1 = date1.getTime();
             date2 = date2.getTime();
@@ -105,38 +118,51 @@ $(function() {
         
     }
     
-    function minMaxDateWord() {
+    
+    function minMaxDateWord(v) {
         // минимальное и максимальное значение даты для словарей.
         // необходимо чтобы задать границы выбора в каллендаре
-        let arrDateMin,
-            arrDateMax;
+        let dateMin,
+            dateMax;
         for(let k in tables[uploadTable].tablesName) {
             if(tables[uploadTable].tablesName[k]) {
                 
                 let min = tables[uploadTable].tables[k][0].date;
                 let max = tables[uploadTable].tables[k][(tables[uploadTable].tables[k].length - 1)].date;
                 
-                if(arrDateMin) {
+                if(dateMin) {
                     
-                    if(min < arrDateMin) {
-                        arrDateMin = min;
+                    if(min < dateMin) {
+                        dateMin = min;
                        }
                     
                 } else {
-                    arrDateMin = min;
+                    dateMin = min;
                 }
                        
-                if(arrDateMax) {
+                if(dateMax) {
                     
-                    if(max > arrDateMax) {
-                       rrDateMax = max;
+                    if(max > dateMax) {
+                       dateMax = max;
                        }
                         
                 } else {
-                    arrDateMax = max; 
+                    dateMax = max; 
                 }
             }
         }
+        
+        if(v === 'min') {
+            let minDateObj = new Date(dateMin);
+            
+            return `${minDateObj.getFullYear()}/${minDateObj.getMonth() + 1}/${minDateObj.getDate()}`;
+        }
+        if(v === 'max') {
+            let maxDateObj = new Date(dateMax);
+            
+            return `${maxDateObj.getFullYear()}/${maxDateObj.getMonth() + 1}/${maxDateObj.getDate()}`;
+        }
+        
     }
     
     
